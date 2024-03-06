@@ -14,6 +14,11 @@ import java.util.Optional;
 public class ChocolateController {
     @Autowired
     ChocolateRepository repository;
+    @GetMapping
+    public String home() {
+        return "<h1>Olá, temos chocolate!</h1>";
+    }
+
     @GetMapping(value = "/chocolate")
     public List<Chocolate> buscar() {
         return repository.findAll();
